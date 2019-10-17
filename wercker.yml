@@ -52,23 +52,7 @@ push-operator-image:
         mv bin/mysql-operator /mysql-operator
         chmod +x /mysql-operator
 
-    - internal/docker-push:
-      registry: https://iad.ocir.io/v2
-      repository: iad.ocir.io/axo2fyagn6md/mysql-operator
-      tag: $VERSION
-      entrypoint: /mysql-operator
-      username: $OCIRUSERNAME
-      password: $OCIRPASSWORD
-
-    - internal/docker-push:
-      registry: https://lhr.ocir.io/v2
-      repository: lhr.ocir.io/axo2fyagn6md/mysql-operator
-      tag: $VERSION
-      entrypoint: /mysql-operator
-      username: $OCIRUSERNAME
-      password: $OCIRPASSWORD
-
-    - internal/docker-push:
+- internal/docker-push:
       registry: https://phx.ocir.io/v2
       repository: phx.ocir.io/axo2fyagn6md/mysql-operator
       tag: $VERSION
@@ -76,14 +60,7 @@ push-operator-image:
       username: $OCIRUSERNAME
       password: $OCIRPASSWORD
 
-    - internal/docker-push:
-      registry: https://fra.ocir.io/v2
-      repository: fra.ocir.io/axo2fyagn6md/mysql-operator
-      tag: $VERSION
-      entrypoint: /mysql-operator
-      username: $OCIRUSERNAME
-      password: $OCIRPASSWORD
-
+ 
 push-agent-image:
   box:
     id: mysql/mysql-server:8.0.11
