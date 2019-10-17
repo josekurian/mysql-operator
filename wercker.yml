@@ -54,7 +54,7 @@ push-operator-image:
 
     - internal/docker-push:
       registry: https://iad.ocir.io/v2
-      repository: iad.ocir.io/oracle/mysql-operator
+      repository: iad.ocir.io/axo2fyagn6md/mysql-operator
       tag: $VERSION
       entrypoint: /mysql-operator
       username: $OCIRUSERNAME
@@ -62,7 +62,7 @@ push-operator-image:
 
     - internal/docker-push:
       registry: https://lhr.ocir.io/v2
-      repository: lhr.ocir.io/oracle/mysql-operator
+      repository: lhr.ocir.io/axo2fyagn6md/mysql-operator
       tag: $VERSION
       entrypoint: /mysql-operator
       username: $OCIRUSERNAME
@@ -70,7 +70,7 @@ push-operator-image:
 
     - internal/docker-push:
       registry: https://phx.ocir.io/v2
-      repository: phx.ocir.io/oracle/mysql-operator
+      repository: phx.ocir.io/axo2fyagn6md/mysql-operator
       tag: $VERSION
       entrypoint: /mysql-operator
       username: $OCIRUSERNAME
@@ -78,7 +78,7 @@ push-operator-image:
 
     - internal/docker-push:
       registry: https://fra.ocir.io/v2
-      repository: fra.ocir.io/oracle/mysql-operator
+      repository: fra.ocir.io/axo2fyagn6md/mysql-operator
       tag: $VERSION
       entrypoint: /mysql-operator
       username: $OCIRUSERNAME
@@ -104,7 +104,7 @@ push-agent-image:
       registry: https://phx.ocir.io/v2
       username: $OCIRUSERNAME
       password: $OCIRPASSWORD
-      repository: phx.ocir.io/oracle/mysql-agent
+      repository: phx.ocir.io/axo2fyagn6md/mysql-agent
       tag: $VERSION
       entrypoint: /mysql-agent
       user: mysql
@@ -113,7 +113,7 @@ e2e-test:
   base-path: "/go/src/github.com/oracle/mysql-operator"
   box:
     registry: https://phx.ocir.io/v2
-    id: phx.ocir.io/v2/oracle/mysql-operator-ci-e2e:1.1.1
+    id: phx.ocir.io/v2/axo2fyagn6md/mysql-operator-ci-e2e:1.1.1
   steps:
     - script:
       name: e2e default tests
