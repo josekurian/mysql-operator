@@ -100,25 +100,7 @@ push-agent-image:
         mv bin/mysql-agent /mysql-agent
         chmod +x /mysql-agent
 
-    - internal/docker-push:
-      registry: https://iad.ocir.io/v2
-      username: $OCIRUSERNAME
-      password: $OCIRPASSWORD
-      repository: iad.ocir.io/oracle/mysql-agent
-      tag: $VERSION
-      entrypoint: /mysql-agent
-      user: mysql
-
-    - internal/docker-push:
-      registry: https://lhr.ocir.io/v2
-      username: $OCIRUSERNAME
-      password: $OCIRPASSWORD
-      repository: lhr.ocir.io/oracle/mysql-agent
-      tag: $VERSION
-      entrypoint: /mysql-agent
-      user: mysql
-
-    - internal/docker-push:
+     - internal/docker-push:
       registry: https://phx.ocir.io/v2
       username: $OCIRUSERNAME
       password: $OCIRPASSWORD
@@ -127,20 +109,11 @@ push-agent-image:
       entrypoint: /mysql-agent
       user: mysql
 
-    - internal/docker-push:
-      registry: https://fra.ocir.io/v2
-      username: $OCIRUSERNAME
-      password: $OCIRPASSWORD
-      repository: fra.ocir.io/oracle/mysql-agent
-      tag: $VERSION
-      entrypoint: /mysql-agent
-      user: mysql
-
 e2e-test:
   base-path: "/go/src/github.com/oracle/mysql-operator"
   box:
-    registry: https://iad.ocir.io/v2
-    id: iad.ocir.io/oracle/mysql-operator-ci-e2e:1.1.1
+    registry: https://phx.ocir.io/v2
+    id: phx.ocir.io/v2/oracle/mysql-operator-ci-e2e:1.1.1
   steps:
     - script:
       name: e2e default tests
